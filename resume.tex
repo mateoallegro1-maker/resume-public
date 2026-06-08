@@ -1,168 +1,200 @@
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
-% Awesome CV LaTeX Template
+% Awesome CV LaTeX Template for CV/Resume
 %
 % This template has been downloaded from:
 % https://github.com/posquit0/Awesome-CV
-%
-% Author:
-% Claud D. Park <posquit0.bj@gmail.com>
-% http://www.posquit0.com
-%
-% Template license:
-% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
-%
 
+%-------------------------------------------------------------------------------
+% CONFIGURACIONES
+%-------------------------------------------------------------------------------
+\documentclass[11pt, a4paper]{awesome-cv}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     Configuration
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Themes: Awesome-CV
-\documentclass[]{awesome-cv}
-\usepackage{textcomp}
-%%% Override a directory location for fonts(default: 'fonts/')
+% Configuración de márgenes
+\geometry{left=1.4cm, top=1.5cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+% Ubicación de las fuentes del proyecto
 \fontdir[fonts/]
 
-%%% Configure a directory location for sections
-\newcommand*{\sectiondir}{resume/}
+% Color de resaltado (Celeste/Azul Awesome)
+\colorlet{awesome}{awesome-skyblue}
 
-%%% Override color
-% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
-%                 awesome-nephritis, awesome-concrete, awesome-darknight
-%% Color for highlight
-% Define your custom color if you don't like awesome colors
-\colorlet{awesome}{awesome-red}
-%\definecolor{awesome}{HTML}{CA63A8}
-%% Colors for text
-%\definecolor{darktext}{HTML}{414141}
-%\definecolor{text}{HTML}{414141}
-%\definecolor{graytext}{HTML}{414141}
-%\definecolor{lighttext}{HTML}{414141}
+% Resaltar las primeras tres letras de cada sección con el color principal
+\setbool{acvSectionColorHighlight}{true}
 
-%%% Override a separator for social informations in header(default: ' | ')
-%\headersocialsep[\quad\textbar\quad]
-    \begin{document}
-    
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     Profile
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{center}
-	\headerfirstnamestyle{MATEO} \headerlastnamestyle{Surname} \\
-	\vspace{2mm}
-	{\hspace{0.8cm}\faEnvelope\ email@gmail.com}  |  {\faMobile\ (+34) 999999999}  |  {\faMapMarker\ City, Country} 
-	\newline {\faLink\ \href{https://www.linkedin.com/in/your-linkedin-page/}{https://www.linkedin.com/in/your-linkedin-page/}}
-\end{center}
+% Definición del puesto/perfil principal en el encabezado
+\position{Ingeniería Industrial \& Marketing Digital}
 
-\cvsection{Skills}
+%-------------------------------------------------------------------------------
+%	INFORMACIÓN PERSONAL
+%-------------------------------------------------------------------------------
+\name{Mateo}{Allegro}
+\mobile{(+54) 9 341 655-3176}
+\email{mateoallegrol@gmail.com}
+\location{Rosario, Argentina}
+\linkedin{mateoallegro}
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+% Imprimir el encabezado centrado
+\makecvheader[C]
+
+% Configuración del pie de página
+\makecvfooter
+  {\today}
+  {Mateo Allegro~~~·~~~Curriculum Vitae}
+  {\thepage}
+
+
+%-------------------------------------------------------------------------------
+%	CONTENIDO DEL CV
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+%	SECCIÓN: PERFIL
+%-------------------------------------------------------------------------------
+\cvsection{Perfil Profesional}
+
+\begin{paragraph}
+{Estudiante avanzado de Ingeniería Industrial con un perfil fuertemente volcado hacia el Marketing Digital y la gestión estratégica. Cuento con experiencia en la optimización de procesos internos, análisis de gestión para la toma de decisiones gerenciales y coordinación de proyectos. Me apasiona fusionar la estructura metodológica de la ingeniería con la creatividad y el dinamismo del sector digital y cultural, aportando soluciones prácticas, liderazgo de equipos y un enfoque orientado a la eficiencia operativo-comercial.}
+\end{paragraph}
+
+
+%-------------------------------------------------------------------------------
+%	SECCIÓN: EXPERIENCIA LABORAL
+%-------------------------------------------------------------------------------
+\cvsection{Experiencia Laboral}
+
 \begin{cventries}
-	\cventry
-	{}
-	{\def\arraystretch{1.15}{\begin{tabular}{ l l }
-		Languages:  & {\skill{ Java, JavaScript, TypeScript, SQL, HTML, CSS}} \\
-		Frameworks:  & {\skill{ Spring, Angular.}} \\
-		Databases:  & {\skill{ MySQL, PostgreSQL (with PostGIS module), Neo4j, Oracle, SQLite.}} \\
-		Technologies / Tools: \hspace{0.05cm} & {\skill{ Docker, Docker Swarm, Jenkins, RabbitMQ, Kafka, SonarQube, Maven, npm, Git.}} \\
-		Practices:  & {\skill{ Agile, Scrum, SOLID Principles, Test-Driven Development, Code Reviews.}} \\
-		\end{tabular}}}
-	{}
-	{}
-	{}
-\end{cventries}
-\vspace{-7mm}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     Experience
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\cvsection{Experience}
-\begin{cventries}
-	\cventry
-	{Software Engineer}
-	{Company name}
-	{City, Country}
-	{Date From – Date To}
-	{\begin{cvitems}
-		\vspace{0.5mm}
-		\item {Built a real-time monitoring system for the devices that the company has in hundreds of hotels around the world. Kafka, Flink and a graph database (Neo4j) deployed in a Docker Swarm cluster.}
-		\item {Improved the algorithm that processes the status of the hotels given their devices\textquotesingle{} parameters, reducing 95\% of the processing time.}
-		\item {Implemented a solution to centralize the communications with all the different property management systems (PMS). With it, we got rid of duplicate code that we had in multiple platforms that need to interact with hotels.}
-		\end{cvitems}}
 
-	\cventry
-	{Software Engineer}
-	{Company Name}
-	{City, Country}
-	{Date From – Date To}
-	{\begin{cvitems}
-		\vspace{0.5mm}
-		\item {Led a team of five people to build a water quality analysis platform. Drones and USVs collected the water samples.}
-		\item {Designed and developed an algorithm to determine the best sea route and the estimated time for USVs to collect all the water samples they need.}
-		\item {Built a collaborative toponymy platform with over 1.5 million place names and their metadata.}
-		\item {Suggested and implemented a CI / CD methodology using Jenkins and SonarQube.}
-		\end{cvitems}}
+  \cventry
+    {Analista Integral de Staff} % Puesto
+    {La Segunda Seguros} % Empresa
+    {Rosario, Argentina} % Ubicación
+    {Mayo 2025 - Mar. 2026} % Fechas
+    {
+      \begin{cvitems} % Descripción de tareas y logros
+        \item {Elaboré tableros e indicadores de gestión para la Gerencia de Seguros de Personas, transformando datos complejos en información estratégica para la toma de decisiones.}
+        \item {Lideré iniciativas de mejora continua y optimización de procesos internos, logrando aumentar la eficiencia operativa y la calidad en el servicio.}
+        \item {Coordiné flujos de trabajo interdepartamentales para asegurar la correcta implementación de nuevos proyectos corporativos.}
+      \end{cvitems}
+    }
 
-	\cventry
-	{Web Developer (Internship)}
-	{Company Name}
-	{City, Country}
-	{Date From – Date To}
-	{\begin{cvitems}
-		\vspace{0.5mm}
-		\item {Developed two websites using PHP, HTML, CSS, JavaScript and MySQL.}
-		\end{cvitems}}
-\end{cventries}
+  \cventry
+    {Analista de Datos y Estrategia Comercial} % Puesto
+    {Pampa Analytics} % Empresa
+    {Rosario, Argentina} % Ubicación
+    {Feb. 2024 - Abr. 2025} % Fechas
+    {
+      \begin{cvitems}
+        \item {Diseñé e implementé soluciones de análisis estratégico y visualización para empresas del sector retail utilizando Looker Studio y Power BI.}
+        \item {Optimicé procesos operativos mediante la integración de herramientas de medición analítica (Google Analytics, BigQuery), identificando oportunidades de mejora en el embudo de conversión y ventas.}
+        \item {Traduje requerimientos de negocio en soluciones funcionales, facilitando la planificación comercial de las cuentas asignadas.}
+      \end{cvitems}
+    }
 
-\cvsection{Projects}
-\begin{cventries}
-	\vspace{-3mm}
-	\cventry
-	{}
-	{Crossbar Challenge \vspace{-5mm}}
-	{Unity, C\#, Blender \vspace{-5mm}}
-	{}
-	{\begin{cvsectionnormaltext}
-		\item {Football game with almost 100K downloads in the play store. 
-		\newline \faLink\ \href{https://play.google.com/store/apps/details?id=com.DABCStudios.CrossbarChallenge}{https://play.google.com/store/apps/details?id=com.DABCStudios.CrossbarChallenge}}
-	\end{cvsectionnormaltext}}
+  \cventry
+    {Pasante de Marketing Posventa} % Puesto
+    {John Deere} % Empresa
+    {Granadero Baigorria, Argentina} % Ubicación
+    {Mayo 2024 - Nov. 2024} % Fechas
+    {
+      \begin{cvitems}
+        \item {Brindé soporte logístico, técnico y comercial a la red de concesionarios oficiales, garantizando la correcta ejecución de los lineamientos de la marca.}
+        \item {Participé activamente en el diseño, implementación y seguimiento de campañas comerciales de posventa, evaluando el rendimiento de proveedores estratégicos.}
+        \item {Desarrollé reportes automatizados de rendimiento de ventas para optimizar el control de stock y la planificación de la distribución.}
+      \end{cvitems}
+    }
 
-	\vspace{-3mm}
-	\cventry
-	{}
-	{Egg Incubator \vspace{-5mm}}
-	{Java, Python, C++ (Qt Framework), Android, Raspberry Pi \vspace{-5mm}}
-	{}
-	{\begin{cvsectionnormaltext}
-		\item{Monitoring and control system for an egg incubator, using a Raspberry Pi. Controlled by an Android app, it is possible to set up the target temperature / humidity and other parameters. Also able to perform manual operations, activating / deactivating the relays to connect lights, resistances, open the door, etc.}
-	\end{cvsectionnormaltext}}	
-	
-	\vspace{-3mm}
-	\cventry
-	{}
-	{Clean Code and SOLID Principles course \vspace{-5mm}}
-	{}
-	{}
-	{\begin{cvsectionnormaltext}
-		\item{Published a course on how to write cleaner code.
-		\newline \faLink\ \href{https://www.udemy.com/course/principios-solid-y-clean-code-escribe-codigo-de-calidad/}{https://www.udemy.com/course/principios-solid-y-clean-code-escribe-codigo-de-calidad/}}
-	\end{cvsectionnormaltext}}
-	
-	\vspace{-5mm}
-	
+  \cventry
+    {Director Creativo y Fundador} % Puesto
+    {Litto.mag (Proyecto Independiente)} % Empresa
+    {Rosario, Argentina} % Ubicación
+    {2024 - Presente} % Fechas
+    {
+      \begin{cvitems}
+        \item {Ideé y coordiné la producción integral de contenidos, ciclos de sesiones acústicas y entrevistas orientadas al sector cultural para medios digitales.}
+        \item {Diseñé propuestas comerciales y de alianzas estratégicas, gestionando la logística ejecutiva y los planes de comunicación del proyecto.}
+      \end{cvitems}
+    }
+
 \end{cventries}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     Education
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\vspace{8mm}
-\cvsection{Education}
+
+%-------------------------------------------------------------------------------
+%	SECCIÓN: EDUCACIÓN
+%-------------------------------------------------------------------------------
+\cvsection{Educación}
+
 \begin{cventries}
-	\vspace{-3mm}
-	\cventry
-	{}
-	{University of Santiago de Compostela \vspace{-5mm}}
-	{Santiago de Compostela, Spain \vspace{-5mm}}
-	{Date From – Date To \vspace{-5mm}}
-	{\begin{cvsectionnormaltext} 
-		\item{BSc in Computer Science (8.2/10)}
-	\end{cvsectionnormaltext}}
+
+  \cventry
+    {Grado en Ingeniería Industrial (70\% de la carrera completado)} % Título
+    {Universidad Católica Argentina} % Institución
+    {Rosario, Argentina} % Ubicación
+    {2021 - Presente} % Fechas
+    {}
+
+  \cventry
+    {Programa Ejecutivo de Marketing Digital} % Título
+    {Universidad Católica Argentina} % Institución
+    {Rosario, Argentina} % Ubicación
+    {2026} % Fechas
+    {}
+
+  \cventry
+    {Intercambio Académico Internacional (Semestre de Estudios Extranjeros)} % Título
+    {Universidad Loyola Andalucía} % Institución
+    {Sevilla, España} % Ubicación
+    {2023} % Fechas
+    {}
+
 \end{cventries}
+
+
+%-------------------------------------------------------------------------------
+%	SECCIÓN: VOLUNTARIADO
+%-------------------------------------------------------------------------------
+\cvsection{Voluntariado}
+
+\begin{cventries}
+
+  \cventry
+    {Voluntario en Gestión y Comunicación} % Rol
+    {TECHO Argentina} % Organización
+    {Rosario, Argentina} % Ubicación
+    {2025 - Presente} % Fechas
+    {
+      \begin{cvitems}
+        \item {Colaboración activa en la coordinación logística de proyectos comunitarios de hábitat y en la difusión y comunicación de campañas institucionales de la ONG.}
+      \end{cvitems}
+    }
+
+  \cventry
+    {Coordinador y Líder de Equipo} % Rol
+    {ONG Conciencia} % Organización
+    {Rosario, Argentina} % Ubicación
+    {2021 - 2024} % Fechas
+    {
+      \begin{cvitems}
+        \item {Encargado de tareas de planificación, liderazgo de equipos de jóvenes y coordinación general de actividades formativas sobre participación ciudadana.}
+      \end{cvitems}
+    }
+
+\end{cventries}
+
+
+%-------------------------------------------------------------------------------
+%	SECCIÓN: HABILIDADES Y CERTIFICACIONES
+%-------------------------------------------------------------------------------
+\cvsection{Habilidades \& Certificaciones}
+
+\begin{cvskills}
+  \cvskill{Idiomas}{Inglés Avanzado (First Certificate in English - Cambridge)}
+  \cvskill{Gestión \& Estrategia}{Estrategia Digital, Gestión de Proyectos, Optimización de Procesos, Logística Corporativa, Oratoria y Liderazgo}
+  \cvskill{Herramientas BI}{Power BI, Looker Studio, Tableau, Microsoft Excel Avanzado}
+  \cvskill{Digital \& Medios}{Google Analytics (GA4), Shopify, Fivetran, CapCut, Canva}
+\end{cvskills}
 
 \end{document}
